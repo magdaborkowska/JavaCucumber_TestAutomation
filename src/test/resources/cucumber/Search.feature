@@ -1,7 +1,7 @@
 Feature: Search for product
   As a: User
   I want: to search specific product
-  So that: I can select from results
+  So that: I can select from the results
 
   Scenario Outline: Validate searching the product
     Given The user opens home page

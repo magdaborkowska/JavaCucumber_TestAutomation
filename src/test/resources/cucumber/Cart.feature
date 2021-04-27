@@ -8,7 +8,6 @@ Feature: Cart status
     When The user clicks on the cart button on main page
     Then Page with text about cart status is displayed
 
-
   Scenario Outline: Validate cart status when product added to cart
     Given The user opens home page
     When The user searches for '<ProductName>'

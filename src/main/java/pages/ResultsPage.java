@@ -15,10 +15,10 @@ public class ResultsPage extends BasePage {
     @FindBy(xpath = "//*[@class='_1c7YnTu' and text()='Your search results for:']")
     public WebElement resultsPageText;
 
-    @FindBy(xpath = "//*[@aria-label='ASOS DESIGN metal aviator fashion glasses in rose gold with clear lens; Price: £12.00']")
+    @FindBy(xpath = "//*[@class='_2qG85dG'][1]")
     public WebElement selectedGlassesProduct;
 
-    @FindBy(xpath = "//a[@aria-label='Garmin unisex vivoactive 4S 40mm smart watch in grey 010-02172-02; Price: £239.99']")
+    @FindBy(xpath = "//*[@class='_2qG85dG'][1]")
     public WebElement selectedWatchesProduct;
 
     @FindBy(xpath = "//button[@type and text()]")

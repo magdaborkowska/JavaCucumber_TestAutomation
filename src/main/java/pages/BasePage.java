@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,11 +22,6 @@ public class BasePage extends Page {
     protected void clickOnElement(WebElement element) {
         Actions actions = new Actions(driver);
         actions.click(element).perform();
-    }
-
-    protected void mouseOverElement(WebElement element) {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(element).perform();
     }
 
     protected void enterTextIntoField(WebElement element, String text) {
@@ -54,21 +48,4 @@ public class BasePage extends Page {
         }
         return visibleElement;
     }
-
-    protected WebElement waitToBeVisible(WebElement element, WebDriver driver) {
-        WebElement visibleElement = null;
-        try {
-            visibleElement = new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .until(ExpectedConditions.visibilityOf(element));
-        } catch (Exception e) {
-            System.out.println("Element was not loaded!");
-        }
-        return visibleElement;
-    }
-
-    protected void scrollTo(WebDriver driver, WebElement element) {
-        ((JavascriptExecutor) driver).executeScript(
-                "arguments[0].scrollIntoView();", element);
-    }
-
 }

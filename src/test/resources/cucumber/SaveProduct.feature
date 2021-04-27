@@ -12,7 +12,6 @@ Feature: Save the product
     Then The user is redirected to page with saved products
 
     Examples:
-
       | ProductName |
       | glasses       |
 
@@ -27,6 +26,5 @@ Feature: Save the product
     Then There the saved section is empty
 
     Examples:
-
       | ProductName |
       | watches     |
