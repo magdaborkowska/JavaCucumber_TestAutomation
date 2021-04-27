@@ -22,26 +22,48 @@ public class CategoryPage extends BasePage {
     @FindBy(xpath = "//a[@href='https://www.asos.com/women/' and text()='WOMEN']")
     public WebElement addressOnCategoryPage;
 
+    @FindBy(xpath = "//span[text()='New In']")
+    public WebElement newInMarketplace;
+
+    @FindBy(xpath = "//a[contains(text(),'View all')]")
+    public WebElement viewAllInMarketplace;
+
+    @FindBy(xpath = "//h1[contains(text(),'NEW IN')]")
+    public WebElement categoryPageMarketplaceText;
+
+
 
     public CategoryPage(WebDriver driver) {
         super(driver);
     }
 
-    public CategoryPage clickOnTheCategoryAccessories() {
-        logger.info("Click on the Woman category");
-        pickCategoryAccessories.click();
-        return this;
-    }
+//    public CategoryPage clickOnTheCategoryAccessories() {
+//        logger.info("Click on the Woman category");
+//        pickCategoryAccessories.click();
+//        return this;
+//    }
 
-    public CategoryPage clickOnTheSubcategorySunglasses() {
-        logger.info("Click on the Woman category");
-        pickSubcategorySunglasses.click();
-        return this;
-    }
+//    public CategoryPage clickOnTheSubcategorySunglasses() {
+//        logger.info("Click on the Woman category");
+//        pickSubcategorySunglasses.click();
+//        return this;
+//    }
 
-    public CategoryPage takeFirstItem() {
+//    public CategoryPage takeFirstItem() {
+//        logger.info("Click on the first item");
+//        takeFirstItem.click();
+//        return this;
+//    }
+
+    public CategoryPage clickOnNewInCategory() {
         logger.info("Click on the first item");
-        takeFirstItem.click();
+        newInMarketplace.click();
+        return this;
+    }
+
+    public CategoryPage clickOnViewAllMarketplace() {
+        logger.info("Click on the first item");
+        viewAllInMarketplace.click();
         return this;
     }
 

@@ -30,6 +30,9 @@ public class ResultsPage extends BasePage {
     @FindBy(xpath = "//span[@class='heartPrimary']")
     public WebElement saveTheProduct;
 
+    @FindBy(xpath = "//h2[contains(text(),'NOTHING MATCHES YOUR SEARCH')]")
+    public WebElement noResultsText;
+
 
     public ResultsPage(WebDriver driver){
         super(driver);

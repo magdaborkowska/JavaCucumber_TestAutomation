@@ -9,9 +9,9 @@ public class PageManager {
     private HomePage homePage;
     private ProductPage productPage;
     private ResultsPage resultsPage;
-    private CartPage cartPage;
     private CategoryPage categoryPage;
     private SavedProductsPage savedProductsPage;
+    private SignInPage signInPage;
 
     public PageManager(WebDriver driver) {
         this.driver = driver;
@@ -35,11 +35,6 @@ public class PageManager {
         return resultsPage;
     }
 
-    public CartPage cartPage() {
-        if (cartPage == null)
-            cartPage = new CartPage(driver);
-        return cartPage;
-    }
     public CategoryPage categoryPage() {
         if (categoryPage == null)
             categoryPage = new CategoryPage(driver);
@@ -49,6 +44,12 @@ public class PageManager {
         if (savedProductsPage == null)
             savedProductsPage = new SavedProductsPage(driver);
         return savedProductsPage;
+    }
+
+    public SignInPage signInPage() {
+        if (signInPage == null)
+            signInPage = new SignInPage(driver);
+        return signInPage;
     }
 
 }

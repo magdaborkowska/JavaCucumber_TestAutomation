@@ -3,7 +3,6 @@ package pages;
 import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,15 +25,20 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@class='empty-bag-title' and text()='Your bag is empty']")
     public WebElement textOnPage;
 
-    @FindBy(xpath = "//*[text()='SHOP WOMEN']")
-    public WebElement shopWomanButton;
+    @FindBy(xpath = "//a[@href='https://marketplace.asos.com?ctaref=Global%20nav']")
+    public WebElement marketplaceButton;
 
-    @FindBy(xpath = "//*[@href='https://www.asos.com/women/new-in/new-in-shoes/cat/?cid=6992&nlid=ww|new+in|new+products|shoes']")
-    public WebElement pickCategory;
+//    @FindBy(xpath = "//*[@href='https://www.asos.com/women/new-in/new-in-shoes/cat/?cid=6992&nlid=ww|new+in|new+products|shoes']")
+//    public WebElement pickCategory;
 
     @FindBy(xpath = "//input[@type='search']")
     public WebElement searchField;
 
+    @FindBy(xpath = "//*[@type='button' and @aria-label='My Account']")
+    public WebElement myAccountIcon;
+
+    @FindBy(xpath = "//*[@data-testid='myaccount-link' and text()='My Account']")
+    public WebElement myAccountFromDropDown;
 
 
     public HomePage(WebDriver driver){
@@ -52,56 +56,27 @@ public class HomePage extends BasePage {
         cartButton.click();
         return this;
     }
-    public HomePage clickOnTheShopWomanButton() {
-        logger.info("Click on the Shop Woman button");
-        shopWomanButton.click();
-        return this;
-    }
+
     public HomePage searchTerm(String searchTerm) {
         enterTextIntoField(searchField, searchTerm);
         pressKey(Keys.ENTER);
         return this;
     }
 
+    public HomePage clickOnMyAccountIcon() {
+        logger.info("Click on the my account icon on nav bar");
+        myAccountIcon.click();
+        return this;
+    }
+    public HomePage clickOnMyAccountToSignIn() {
+        logger.info("Click on the my account icon on nav bar");
+        myAccountFromDropDown.click();
+        return this;
+    }
 
-//    @Step("Search for...")
-//    public HomePage searchFor(String searchPhrase) {
-//        enterTextIntoField(SEARCH_FIELD, searchPhrase);
-//        pressKey(Keys.ENTER);
-//        return this;
-//    }
-//
-//    @Step("Navigate to Polish version")
-//    public HomePage navigateToPolishVersion() {
-//        scrollTo(driver, SITE_SELECTION_TAB);
-//        clickOnElement(waitToBeClickable(SITE_SELECTION_TAB, driver));
-//        clickOnElement(waitToBeClickable(POLAND_BUTTON, driver));
-//        return this;
-//    }
-//
-//    @Step("Open My eBay section")
-//    public HomePage openMyEbaySection() {
-//        mouseOverElement(MY_EBAY_SECTION_BUTTON);
-//        return this;
-//    }
-//
-//    @Step("Go to cart")
-//    public HomePage goToCart() {
-//        clickOnElement(waitToBeClickable(CART_BUTTON, driver));
-//        return this;
-//    }
-//
-//    @Step("Navigate to login page")
-//    public HomePage navigateToLoginPage() {
-//        clickOnElement(waitToBeClickable(MY_EBAY_SECTION_BUTTON, driver));
-//        return this;
-//    }
-//
-//    @Step("Navigate to UK version")
-//    public HomePage navigateToUKVersion() {
-//        scrollTo(driver, SITE_SELECTION_TAB);
-//        clickOnElement(waitToBeClickable(SITE_SELECTION_TAB, driver));
-//        clickOnElement(waitToBeClickable(UK_BUTTON, driver));
-//        return this;
-//    }
+    public HomePage clickOnMarketplaceButton() {
+        logger.info("Click on the marketplace button on the home page");
+        marketplaceButton.click();
+        return this;
+    }
 }
