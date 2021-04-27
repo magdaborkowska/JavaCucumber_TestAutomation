@@ -40,30 +40,33 @@ public class ResultsPage extends BasePage {
 
     @Step("Click on the first item that was listed")
     public ResultsPage clickOnTheFirstGlassesProduct() {
+        logger.info("Select product from glasses results");
         clickOnElement(waitToBeClickable(selectedGlassesProduct, driver));
         return this;
     }
     @Step("Click on the first item that was listed")
     public ResultsPage clickOnTheFirstWatchesProduct() {
+        logger.info("Select product from watches results");
         clickOnElement(waitToBeClickable(selectedWatchesProduct, driver));
         return this;
     }
 
     @Step("Accept cookies on results page")
     public ResultsPage acceptTheCookies() {
+        logger.info("Accept the cookies on results page");
         clickOnElement(waitToBeClickable(acceptCookiesButton, driver));
         return this;
     }
     @Step("Accept country cookies on results page")
     public ResultsPage acceptCountryCookies() {
+        logger.info("Accept country the cookies on results page");
         clickOnElement(waitToBeClickable(acceptCountryCookiesButton, driver));
         return this;
     }
-
+    @Step("Click on the save product icon")
     public ResultsPage saveTheProductForLater() {
+        logger.info("Add product to saved");
         clickOnElement(waitToBeClickable(saveTheProduct, driver));
         return this;
     }
-
-
 }

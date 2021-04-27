@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -24,11 +25,10 @@ public class SignInPage extends BasePage {
         super(driver);
     }
 
-
+    @Step("Submit the sign in form")
     public SignInPage clickOnThSignInFormPageButton() {
         logger.info("Click on the sign in button");
         sigInFormButton.click();
         return this;
     }
-
 }

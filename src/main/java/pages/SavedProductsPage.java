@@ -1,6 +1,5 @@
 package pages;
 
-import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -14,12 +13,10 @@ public class SavedProductsPage extends BasePage {
     @FindBy(xpath = "//select[@id='sortBy' and @aria-label='Sort by']")
     public WebElement savedProductsSortBy;
 
-    @FindBy(xpath = "//*[@class=\"noItemsPrompt_1TiQf\" and text()=\"You have no Saved Items\"]")
+    @FindBy(xpath = "//*[@class='noItemsPrompt_1TiQf' and text()='You have no Saved Items']")
     public WebElement savedProductsSectionEmpty;
-
 
     public SavedProductsPage(WebDriver driver){
         super(driver);
     }
-
 }

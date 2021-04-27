@@ -3,7 +3,6 @@ Feature: Save the product
   I want: to save specific product
   So that: I can buy it later
 
-
   Scenario Outline: Validate save searched product
     Given The user opens home page
     When The user searches for '<ProductName>'

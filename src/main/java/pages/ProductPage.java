@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ProductPage extends BasePage {
 
-    private static final Logger logger = LogManager.getLogger(HomePage.class.getSimpleName());
+    private static final Logger logger = LogManager.getLogger(ProductPage.class.getSimpleName());
 
     @FindBy(xpath = "//*[@data-bind='text: buttonText' and text()='Add to bag']")
     public WebElement addToCart;
@@ -33,13 +33,16 @@ public class ProductPage extends BasePage {
         clickOnElement(waitToBeClickable(addToCart, driver));
         return this;
     }
+    @Step("Go to the saved products")
     public ProductPage goToSavedProducts() {
+        logger.info("Go to saved products page");
         clickOnElement(waitToBeClickable(savedProductsIcon, driver));
         return this;
     }
+    @Step("Delete saved product")
     public ProductPage deleteProductFromSaved() {
+        logger.info("Delete product from saved");
         clickOnElement(waitToBeClickable(deleteFromSavedProducts, driver));
         return this;
     }
-
 }

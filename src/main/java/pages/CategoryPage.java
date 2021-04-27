@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -8,19 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CategoryPage extends BasePage {
 
-    private static final Logger logger = LogManager.getLogger(HomePage.class.getSimpleName());
-
-    @FindBy(xpath = "//button[@data-index='5' and @aria-expanded='true']")
-    public WebElement pickCategoryAccessories;
-
-    @FindBy(xpath = "//a[@href='https://www.asos.com/women/sunglasses/cat/?cid=4545&nlid=ww|accessories|shop+by+product|sunglasses']")
-    public WebElement pickSubcategorySunglasses;
-
-    @FindBy(xpath = "//*[@class='_3WEsAhb' and @xpath='1']")
-    public WebElement takeFirstItem;
-
-    @FindBy(xpath = "//a[@href='https://www.asos.com/women/' and text()='WOMEN']")
-    public WebElement addressOnCategoryPage;
+    private static final Logger logger = LogManager.getLogger(CategoryPage.class.getSimpleName());
 
     @FindBy(xpath = "//span[text()='New In']")
     public WebElement newInMarketplace;
@@ -32,39 +21,20 @@ public class CategoryPage extends BasePage {
     public WebElement categoryPageMarketplaceText;
 
 
-
     public CategoryPage(WebDriver driver) {
         super(driver);
     }
 
-//    public CategoryPage clickOnTheCategoryAccessories() {
-//        logger.info("Click on the Woman category");
-//        pickCategoryAccessories.click();
-//        return this;
-//    }
-
-//    public CategoryPage clickOnTheSubcategorySunglasses() {
-//        logger.info("Click on the Woman category");
-//        pickSubcategorySunglasses.click();
-//        return this;
-//    }
-
-//    public CategoryPage takeFirstItem() {
-//        logger.info("Click on the first item");
-//        takeFirstItem.click();
-//        return this;
-//    }
-
+    @Step("Go to New In on category page")
     public CategoryPage clickOnNewInCategory() {
-        logger.info("Click on the first item");
+        logger.info("Click on the New In category");
         newInMarketplace.click();
         return this;
     }
-
+    @Step("View All subcategory on category page")
     public CategoryPage clickOnViewAllMarketplace() {
-        logger.info("Click on the first item");
+        logger.info("Click on the View All Subcategory");
         viewAllInMarketplace.click();
         return this;
     }
-
 }
